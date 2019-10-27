@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+node_js:
+- 8
+services:
+  - mongodb
+
+script:
+  - npm install codecov -g
+  - npm i
+  - npm run build
+  - npm run test
+  - codecov -f coverage/*.json
+
+after_success:
+  - codecov
+
+notifications:
+disabled: true

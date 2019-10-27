@@ -1,8 +1,10 @@
 # Dependency directories
 node_modules
 jspm_packages
+
 # Optional npm cache directory
 .npm
+
 # Optional REPL history
 .node_repl_history
 /bin/
@@ -13,5 +15,7 @@ jspm_packages
 /logs/*.log
 /.nyc_output/
 /coverage/
+
 .DS_Store
 package-lock.json
+

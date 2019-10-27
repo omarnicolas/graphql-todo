@@ -1,0 +1,46 @@
+{
+  "name": "graphql-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --no-deprecation --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/app.ts",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
+    "test": "mocha --no-deprecation --timeout 10000 --require ts-node/register **/*.spec.ts",
+    "coverage": "nyc --reporter=text mocha --no-deprecation --timeout 10000 dist/test/*.spec.js -x dist/test/*.spec.js",
+    "build": "gulp",
+    "dockerStart": "cd scripts && chmod 777 dockerCompose.sh && ./dockerCompose.sh && cd ..",
+    "dockerStop": "docker-compose down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.7.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.7",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.7",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "gulp": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
+    "mocha": "^6.2.2",
+    "mocha-typescript": "^1.1.17",
+    "nodemon": "^1.19.4",
+    "nyc": "^14.1.1",
+    "sinon": "^7.5.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.6.4"
+  }
+}
